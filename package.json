@@ -1,0 +1,41 @@
+{
+  "name": "barebone-ts",
+  "version": "1.0.0",
+  "description": "Any TypeScript project base",
+  "main": "build/index.js",
+  "repository": "git@github.com:ExposedCat/barebone-ts.git",
+  "author": "Artem Prokop <artem13.prokop@gmail.com>",
+  "license": "GPL-3.0-or-later",
+  "private": false,
+  "devDependencies": {
+    "@tsconfig/recommended": "^1.0.3",
+    "@typescript-eslint/parser": "^6.12.0",
+    "eslint": "^8.54.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-functional": "^6.0.0",
+    "eslint-plugin-github": "^4.10.1",
+    "eslint-plugin-import": "^2.29.0",
+    "eslint-plugin-prettier": "^5.0.1",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-sonarjs": "^0.23.0",
+    "prettier": "^3.1.0",
+    "typescript": "^5.3.2"
+  },
+  "scripts": {
+    "compile": "tsc",
+    "bg:start": "npm run compile && pm2 start build/index.js --name PROJECT",
+    "bg:restart": "npm run prepare && pm2 restart PROJECT",
+    "bg:logs": "pm2 logs PROJECT --lines 10000 -f",
+    "start": "npm run compile && node ."
+  },
+  "keywords": [
+    "boilerplate",
+    "bot",
+    "typescript",
+    "ts",
+    "template",
+    "configuration"
+  ],
+  "dependencies": {},
+  "type": "module"
+}
